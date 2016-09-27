@@ -1,70 +1,27 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: gabri
- * Date: 21/09/2016
- * Time: 17:44
+ * User: GABIJU
+ * Date: 27/09/2016
+ * Time: 20:08
  */
 
-declare (strict_types=1);
+namespace bancos\tests;
+use bancos;
 
-namespace bancos;
-
-class AllBank
+class AllBanksTest extends \PHPUnit_Framework_TestCase
 {
-            protected $pesoagencia = "8923";
-            protected $pesoCont = "45689";
-            protected $pesoDigt = "9";
+    public function testConstructor (string $agencia, string $conta , int $codigo )
+    {
 
-            protected $soma = 0;
-            protected $Digito = 0;
-            protected $valor;
-            protected $i;
+        $Obj1= new AllBank ('0146' , '012542' , 2);
+        $this->assertEquals($Obj1->getAgencia(),'0146');
+    }
 
-            protected $nbanco;
-            protected $nconta;
-            protected $odigito;
+    public function testDigitoFinal (){
 
-public function __construct (string $agencia ,string $conta ,int $digito)
-{
-    $this->nbanco = $agencia;
-    $this->nconta = $conta;
-    $this->odigito = $digito;
-
+        $Obj1= new AllBank ('0146' , '012542' , 2);
+        $this->assertEquals($Obj1->Verificar(2) , true);
+    }
 }
 
-switch ($this->nbanco)
-{
-        case '0416':
-            private function Soma($soma)
-            {
-                for ($this->i = 0; $this->i < 4; $this->i++) {
-                    $soma = $this->pesoagencia[$this->i] * $this->nbanco[$this->i] + $soma;
-                }
-
-                for ($this->i = 0; $this->i < 5; $this->i++) {
-                    $soma = $this->pesoCont[$this->i] * $this->nconta[$this->i] + $soma;
-                }
-                $soma = $this->pesoDigt * $this->odigito + $soma;
-
-                $this->Digito = $this->soma % 11;
-            }
-
-            public function Verificar(int $digito)
-            {
-                $this->Soma($this->soma);
-
-                if ($this->Digito == $digito) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-
-        case 2:
-            break;
-        case 3:
-            break;
-        default:
-            break;
-    }
