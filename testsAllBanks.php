@@ -17,14 +17,14 @@ class AllBanksTest extends \PHPUnit_Framework_TestCase
 
     public function testConstructor() {
 
-        $this->Obj1 = new AllBank ('0146', '012542', 1);
+        $this->Obj1 = new AllBank ('0146', '012542', 21;
         $this->assertEquals($this->Obj1->getAgencia(), '0146');
     }
 
     public function testDigitoFinal (){
 
         $this->Obj1= new AllBank ('0146' , '012542' , 1);
-        $this->assertEquals($this->Obj1->Verificacao(1) , true);
+        $this->assertEquals($this->Obj1->Verificacao(2) , 2);
 
     }
 
