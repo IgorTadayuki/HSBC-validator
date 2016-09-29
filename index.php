@@ -8,17 +8,10 @@
 declare (strict_types=1);
 use Bancos;
 
-$test = new Bancos\AllBank("0416" , "01208" , 2);
+$test = new AllBank("0416" , "01208" , 1);
 echo $test->getAgencia() . "<BR>";
 echo 'Valor Resultado do Resto da Soma das Multiplicaçoes:  ' . $test->SomaHSBC() . '<BR>';
-
-
-if ($test->Verificacao(2)){
-    echo "deu certo " . " <BR>";
-}
-else{
-    echo "deu falso";
-}
+$test->Verificacao(1);
 
 function __autoload ($class){
     $class = str_replace('\\','/',$class).'.php';
