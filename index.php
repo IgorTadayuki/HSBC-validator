@@ -6,12 +6,19 @@
  * Time: 17:36
  */
 declare (strict_types=1);
-use bancos\AllBank;
+use Bancos;
 
-$banco = new AllBank("0416" , "01208" , 2);
-echo $banco->getAgencia();
-echo "nao da";
+$test = new Bancos\AllBank("0416" , "01208" , 2);
+echo $test->getAgencia() . "<BR>";
+echo 'Valor Resultado do Resto da Soma das Multiplicaçoes:  ' . $test->SomaHSBC() . '<BR>';
 
+
+if ($test->Verificacao(2)){
+    echo "deu certo " . " <BR>";
+}
+else{
+    echo "deu falso";
+}
 
 function __autoload ($class){
     $class = str_replace('\\','/',$class).'.php';
