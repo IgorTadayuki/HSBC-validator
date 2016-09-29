@@ -71,15 +71,3 @@ class AllBank
         return $this->nconta;
     }
 }
-
-$teste = new AllBank("0416" , "01208" , 2);
-echo $teste->getAgencia() . "<BR>";
-echo 'Valor Resultado do Resto da Soma das Multiplicaçoes:  ' . $teste->SomaHSBC() . '<BR>';
-
-
-if ($teste->Verificacao(2)){
-    echo "deu certo " . " <BR>";
-}
-else{
-    echo "deu falso";
-}
